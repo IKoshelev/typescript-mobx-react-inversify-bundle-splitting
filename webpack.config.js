@@ -4,13 +4,17 @@ var webpack = require('webpack');
 module.exports = {
   devtool: 'eval',
   mode: 'development',
-  entry: [
-    'webpack-dev-server/client?http://localhost:50000',
-    './src/index'
-  ],
+  // entry: [
+  //   'webpack-dev-server/client?http://localhost:50000',
+  //   './src/index'
+  // ],
+  entry: {
+    index: './src/index',
+  },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
     publicPath: '/dist/'
   },
   resolve: {

@@ -3,6 +3,8 @@ import { iUser } from './../services/types/iUser';
 import { UsersService } from './../services/Users.service';
 import { action, observable } from 'mobx';
 
+console.log("executing CurrentUser.vm.ts");
+
 @ioc.bindToSelf
 export class CurrentUserVM {
     
@@ -20,5 +22,4 @@ export class CurrentUserVM {
     private async loadCurrentUser(){
         this.currentUser = await this.usersService.getCurrentUser();
     }
-
 }

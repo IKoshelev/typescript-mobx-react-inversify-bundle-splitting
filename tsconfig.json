@@ -4,7 +4,7 @@
         "experimentalDecorators": true,
         "jsx": "react",
         "lib": ["dom", "es2015.promise", "es6"],
-        "module": "commonjs",
+        "module":  "esnext",// "commonjs", 
         "moduleResolution": "node",
         "noImplicitAny": true,
         //"noUnusedLocals": true,

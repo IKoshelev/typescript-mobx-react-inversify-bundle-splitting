@@ -1,6 +1,8 @@
 import * as inversify from 'inversify';
 import { defaultContainer } from './IoC-private';
 
+console.log("executing IoC-public.ts");
+
 export function bindToSelf(target: Function){
     inversify.injectable()(target);
     defaultContainer.bind(target).toSelf();

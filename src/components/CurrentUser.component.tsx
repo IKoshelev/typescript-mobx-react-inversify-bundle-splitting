@@ -4,32 +4,21 @@ import { CurrentUserVM } from './CurrentUser.vm';
 
 import { getIocFactory } from './../IoC/IoC-public';
 
-var vm = getIocFactory(CurrentUserVM)();
+console.log("executing CurrentUser.component.tsx");
 
-/* interface ICurrentUserComponentProps { 
-    vm: CurrentUserMM
-} */
+var vm = getIocFactory(CurrentUserVM)();
 
 @observer
 export class CurrentUserComponent extends React.Component/* <ICurrentUserComponentProps> */ {
 
-    // constructor(props:ICurrentUserComponentProps) {
-    //     super(props);
-    //     this.state = {};
-    // }
-
     render() {
 
-        //const vm = this.props.vm;
-
         return <div>
-                { !vm.currentUser && "Not loaded" }
-                { vm.currentUser && (
-                    <div>
-                        Current user: 
-                        <div>{ vm.currentUser.name }</div>
-                    </div>) }
-              
+                Current user:&nbsp;
+                { !vm.currentUser 
+                    ?   "Loading"
+                    :   vm.currentUser.name
+                }
             </div>;
     }
 }
