@@ -1,4 +1,3 @@
-import {observable} from 'mobx';
 import "reflect-metadata";
 import {observer} from 'mobx-react';
 import * as React from 'react';
