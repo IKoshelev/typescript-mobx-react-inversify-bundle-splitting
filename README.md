@@ -1,4 +1,10 @@
-This is a small showcase, how you can use InversifyJS in Mobx MVVM while using React for views layer and composition.
+This is a small showcase, how you can use InversifyJS and code splitting in Mobx MVVM while using React for views layer and composition.
+
+More on code splitting:
+
+https://webpack.js.org/guides/code-splitting/
+
+https://mariusschulz.com/blog/code-splitting-a-typescript-application-with-import-and-webpack
 
 ### Quick demo:
 
