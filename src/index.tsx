@@ -4,6 +4,9 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import DevTools from 'mobx-react-devtools';
 
+import {polyfill} from 'es6-promise';
+polyfill();
+
 interface iSubcomponents {
     CurrentUserCmp?:React.ComponentClass;
     TasksCmp?:React.ComponentClass;
