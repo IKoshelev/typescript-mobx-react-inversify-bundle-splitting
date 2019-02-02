@@ -5,30 +5,44 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import DevTools from 'mobx-react-devtools';
 
+interface iSubcomponents {
+    CurrentUserCmp?:React.ComponentClass;
+    TasksCmp?:React.ComponentClass;
+}
+
 @observer
-class MainView extends React.Component<{}, {SubCmp?:React.ComponentClass}> {
+class MainView extends React.Component<{}, iSubcomponents> {
 
     constructor(props:{}){
         super(props);
         this.state = {};
     }
 
-    loadSplitCode(){
-        return import(/* webpackChunkName: "CurrentUser.component" */ './components/CurrentUser.component')
-            .then((cmp => {
-                this.setState({SubCmp: cmp.CurrentUserComponent});
-            }));
+    async loadCurrentUserCmp(){
+        var cmp = await import(/* webpackChunkName: "CurrentUser.component" */ './components/CurrentUser/CurrentUser.component')
+        this.setState({CurrentUserCmp: cmp.CurrentUserComponent});
+    }
+
+    async loadTasksCmp(){
+        var cmp = await import(/* webpackChunkName: "Tasks.component" */ './components/Tasks/Tasks.component')
+        this.setState({TasksCmp: cmp.TasksComponent});
     }
 
     render() {
         return (
             <div>
-                Welcome! 
-                <button onClick={ () => this.loadSplitCode() }>Show user</button>
-                { this.state.SubCmp
-                    ? <this.state.SubCmp/>
-                    : null}
-                {/* <CurrentUserComponent/> */}
+                Welcome!
+                <br/>  
+                <br/>                
+                { this.state.CurrentUserCmp
+                    ? <this.state.CurrentUserCmp/>
+                    : <button onClick={ () => this.loadCurrentUserCmp() }>Show user</button>}
+                
+                <br/> 
+                { this.state.TasksCmp
+                    ? <this.state.TasksCmp/>
+                    : <button onClick={ () => this.loadTasksCmp() }>Show tasks</button>}
+
                 <DevTools />
             </div>
         );

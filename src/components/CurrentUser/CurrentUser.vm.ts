@@ -1,6 +1,6 @@
-import * as ioc from './../IoC/IoC-public';
-import { iUser } from './../services/types/iUser';
-import { UsersService } from './../services/Users.service';
+import * as ioc from '../../IoC/IoC-public';
+import { iUser } from '../../services/types/backend-types';
+import { UsersService } from '../../services/Users.service';
 import { action, observable } from 'mobx';
 
 console.log("executing CurrentUser.vm.ts");
