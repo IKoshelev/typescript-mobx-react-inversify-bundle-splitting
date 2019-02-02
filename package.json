@@ -7,14 +7,15 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/IKoshelev/typescript-mobx-react-inversify-bundle-splitting"
   },
   "keywords": [
     "TypeScript",
     "mobx",
     "react",
     "inversify",
-    "bundle-splitting"
+    "bundle-splitting",
+	"code-splitting"
   ],
   "dependencies": {
     "inversify": "^5.0.1",
