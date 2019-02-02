@@ -47,8 +47,6 @@ import { CurrentUserVM } from './CurrentUser.vm';
 
 import { getIocFactory } from '../../IoC/IoC-public';
 
-console.log("executing CurrentUser.component.tsx");
-
 @observer
 export class CurrentUserComponent extends React.Component<{},{vm:CurrentUserVM}> {
 
