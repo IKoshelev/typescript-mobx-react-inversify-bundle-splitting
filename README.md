@@ -22,7 +22,7 @@ navigate to localhost:50000/
 Project uses MVVM architecture with very simple IoC setup, which have proved successful in our enterprise application.
 Every type, that needs to be injectable, registers itself with the default IoC container during its loading, dependencies are injected via constructor.   
 
-```
+```Typescript
 import * as ioc from '../../IoC/IoC-public';
 import { UsersService } from '../../services/Users.service';
 import { action, observable } from 'mobx';
@@ -46,7 +46,7 @@ export class CurrentUserVM {
 
 Dependencies are always injected via constructor, except the very top of visual composition, where a strongly typed factory is used.
 
-```
+```Typescript
 import { observer } from 'mobx-react';
 import * as React from 'react';
 import { CurrentUserVM } from './CurrentUser.vm';
@@ -69,7 +69,7 @@ export class CurrentUserComponent extends React.Component<{},{vm:CurrentUserVM}>
 
 At the top level of the application, usually be a shell or router, components are loaded dynamically, thus splitting each top level component into its own mini-bundle. 
 
-```
+```Typescript
 interface iSubcomponents {
     CurrentUserCmp?:React.ComponentClass;
     TasksCmp?:React.ComponentClass;
